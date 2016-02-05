@@ -1,0 +1,19 @@
+{
+  "name": "bmson-generic",
+  "version": "0.0.1",
+  "description": "An independent / generic Javascript bmson loader",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:suitougreentea/bmson-generic.git"
+  },
+  "keywords": [
+    "bmson",
+    "bms"
+  ],
+  "author": "suitougreentea",
+  "license": "MIT"
+}
