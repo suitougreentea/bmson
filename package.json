@@ -4,7 +4,7 @@
   "description": "An independent / generic Javascript bmson loader",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": ""
   },
   "repository": {
     "type": "git",
