@@ -1,0 +1,19 @@
+language: node_js
+
+node_js:
+  - '0.12'
+
+before_install:
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+script:
+  - npm test
+
+after_success:
+  - 'cat coverage/lcov.info | ./node_modules/.bin/coveralls'
+
+env:
+  global:
+    secure: "KCz0kfN6IWqsAcTEvIG8t5o2KwFMxzZKrjMGwSzlzpGks/GUriQ7Dx3SQLKsWxCIpa/LXtmHiUlbUSqtsc3mws7vgKXA7kydyafzPHE04sz8xdHQGb7OOb9fiKEObe3kT1Qdu9KYn2OZ05Dk5WcFT5KoU9bNrwNDkwAc3VzvxHDWim+M8mlK0qNLj8tDZNL7aUgvkwAyl1+w/OtecZuDxS2QY6HaDvwxmKjD/aYSIrKb41kxzcGENi8kKEwROU2fZ/ppiWyZIxiV4luepvlGPD2O17FdTASuA1YENlkBOwoxov6VfgyraWvyFhrVQWf/VFXjAwZfWRNQyUyozDecmqLST+F7tyY91UVJ7zKOhyMey1k6YrcSHLyy7pY339658wo5M42LiYmTL2EU5QyEfUpYV0sPcVRPxxWhHf82vKYJHFE5qeVSVEHlaBIVgBE46SWtJfDCUvKWkLFRSIqTPopfQ72oFUK6+G9nejpN2U8nM+syJsbvlIpwE6QFoS8AipGFTrUFFPm9yh9aYG0F2Lipuu2n7+oBBm9MRfzqb36aoMtrF+PZUtGpZxprqznJenfUDQ+NJ1O02l6bv43tVf/ePZCt/0V2GAMXh6lWwgc46xrf7yHouaCAZdGQdjgL3wwFnK0qPxLxuH7hMfzMrVeSo+9FsPdhYyhyZocBZ38="
