@@ -1,0 +1,167 @@
+{
+    "bga": {
+        "bga_events": [
+        ],
+        "bga_header": [
+        ],
+        "layer_events": [
+        ],
+        "poor_events": [
+        ]
+    },
+    "bpm_events": [
+        {
+            "bpm": 125,
+            "y": 5
+        },
+        {
+            "bpm": 150,
+            "y": 2880
+        },
+        {
+            "bpm": 120,
+            "y": 3840
+        }
+    ],
+    "info": {
+        "artist": "Artist",
+        "back_image": "",
+        "banner_image": "",
+        "chart_name": "Easy",
+        "eyecatch_image": "",
+        "genre": "Genre",
+        "init_bpm": 125,
+        "judge_rank": 100,
+        "level": 1,
+        "mode_hint": "beat-7k",
+        "resolution": 240,
+        "subartists": [
+            "Subartists"
+        ],
+        "subtitle": "Subtitle",
+        "title": "Test",
+        "total": 100
+    },
+    "lines": [
+        {
+            "k": 0,
+            "y": 0
+        },
+        {
+            "k": 0,
+            "y": 1600
+        },
+        {
+            "k": 0,
+            "y": 1920
+        },
+        {
+            "k": 0,
+            "y": 2880
+        },
+        {
+            "k": 0,
+            "y": 3840
+        }
+    ],
+    "sound_channels": [
+        {
+            "name": "drum_000.wav",
+            "notes": [
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 1,
+                    "y": 960
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 2,
+                    "y": 1200
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 3,
+                    "y": 1440
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 4,
+                    "y": 1680
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 4,
+                    "y": 1700
+                },
+                {
+                    "c": false,
+                    "l": 480,
+                    "x": 4,
+                    "y": 1920
+                }
+            ]
+        },
+        {
+            "name": "drum_000.wav",
+            "notes": [
+                {
+                    "c": true,
+                    "l": 0,
+                    "x": 9,
+                    "y": 960
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 4,
+                    "y": 1720
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 9,
+                    "y": 2880
+                }
+            ]
+        },
+        {
+            "name": "drum_002.wav",
+            "notes": [
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 0,
+                    "y": 960
+                },
+                {
+                    "c": false,
+                    "l": 0,
+                    "x": 5,
+                    "y": 2640
+                },
+                {
+                    "c": false,
+                    "l": 1920,
+                    "x": 1,
+                    "y": 2880
+                }
+            ]
+        }
+    ],
+    "stop_events": [
+        {
+            "duration": 1500,
+            "y": 3400
+        },
+        {
+            "duration": 1500,
+            "y": 3850
+        }
+    ],
+    "version": "1.0.0"
+}
