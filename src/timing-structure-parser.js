@@ -10,8 +10,8 @@ export default class TimingStructureParser {
    * It will also remove unnecessary BPM change whose value is unchanged.
    * <code>bmson.info.init_bpm</code> will be interpreted as y=0 bpm.
    * You can construct timing table from timing structore object by using {@link TimingTableConstructor}.
-   * @param  {Object} bmson A valid bmson that will be parsed.
-   * @return {Object}       A timing structure object.
+   * @param  {Object}   bmson A valid bmson that will be parsed.
+   * @return {Object[]}       A timing structure object.
    */
   parse(bmson) {
     let structure = []
@@ -39,10 +39,14 @@ export default class TimingStructureParser {
       if(bpmEvent && bpmEvent.bpm != lastBpm) {
         eventToPut.bpm = bpmEvent.bpm
         lastBpm = bpmEvent.bpm
+      } else {
+        eventToPut.bpm = null
       }
 
       if(stopDuration > 0) {
         eventToPut.stop = stopDuration
+      } else {
+        eventToPut.stop = null
       }
 
       // When bpm value is same as previous one, both events are set to null due to its removal

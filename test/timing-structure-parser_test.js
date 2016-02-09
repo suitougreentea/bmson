@@ -17,10 +17,10 @@ describe("TimingStructureParser", () => {
     }
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
-    assert.deepEqual(structure[0], { y: 0, bpm: 120 })
-    assert.deepEqual(structure[1], { y: 10, bpm: 50 })
+    assert.deepEqual(structure[0], { y: 0, bpm: 120, stop: null })
+    assert.deepEqual(structure[1], { y: 10, bpm: 50, stop: null })
     assert.deepEqual(structure[2], { y: 20, bpm: 60, stop: 100 })
-    assert.deepEqual(structure[3], { y: 30, stop: 200 })
+    assert.deepEqual(structure[3], { y: 30, bpm: null, stop: 200 })
   })
 
   it("can create timing structure with irregular order", () => {
@@ -37,10 +37,10 @@ describe("TimingStructureParser", () => {
     }
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
-    assert.deepEqual(structure[0], { y: 0, bpm: 120 })
-    assert.deepEqual(structure[1], { y: 10, bpm: 50 })
+    assert.deepEqual(structure[0], { y: 0, bpm: 120, stop: null })
+    assert.deepEqual(structure[1], { y: 10, bpm: 50, stop: null })
     assert.deepEqual(structure[2], { y: 20, bpm: 60, stop: 100 })
-    assert.deepEqual(structure[3], { y: 30, stop: 200 })
+    assert.deepEqual(structure[3], { y: 30, bpm: null, stop: 200 })
   })
 
   it("can create timing structure with duplication of y", () => {
@@ -60,10 +60,10 @@ describe("TimingStructureParser", () => {
     }
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
-    assert.deepEqual(structure[0], { y: 0, bpm: 120 })
-    assert.deepEqual(structure[1], { y: 10, bpm: 70 })
+    assert.deepEqual(structure[0], { y: 0, bpm: 120, stop: null })
+    assert.deepEqual(structure[1], { y: 10, bpm: 70, stop: null })
     assert.deepEqual(structure[2], { y: 20, bpm: 60, stop: 100 })
-    assert.deepEqual(structure[3], { y: 30, stop: 1000 })
+    assert.deepEqual(structure[3], { y: 30, bpm: null, stop: 1000 })
   })
 
   it("can create timing structure with no bpm change between neighbor events", () => {
@@ -79,9 +79,9 @@ describe("TimingStructureParser", () => {
     }
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
-    assert.deepEqual(structure[0], { y: 0, bpm: 50 })
-    assert.deepEqual(structure[1], { y: 20, bpm: 60 })
-    assert.deepEqual(structure[2], { y: 40, bpm: 70 })
+    assert.deepEqual(structure[0], { y: 0, bpm: 50, stop: null })
+    assert.deepEqual(structure[1], { y: 20, bpm: 60, stop: null })
+    assert.deepEqual(structure[2], { y: 40, bpm: 70, stop: null })
   })
 
   it("can create timing structure with y=0 bpm", () => {
@@ -95,8 +95,8 @@ describe("TimingStructureParser", () => {
     }
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
-    assert.deepEqual(structure[0], { y: 0, bpm: 50 })
-    assert.deepEqual(structure[1], { y: 10, bpm: 60 })
+    assert.deepEqual(structure[0], { y: 0, bpm: 50, stop: null })
+    assert.deepEqual(structure[1], { y: 10, bpm: 60, stop: null })
   })
 
   it("can create timing structure with y=0 stop", () => {
@@ -111,6 +111,6 @@ describe("TimingStructureParser", () => {
     const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 120, stop: 200 })
-    assert.deepEqual(structure[1], { y: 10, stop: 100 })
+    assert.deepEqual(structure[1], { y: 10, bpm: null, stop: 100 })
   })
 })
