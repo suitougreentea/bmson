@@ -1,5 +1,5 @@
 import assert from "power-assert"
-import * as bg from "../src/"
+import TimingStructureParser from "../src/timing-structure-parser"
 
 describe("TimingStructureParser", () => {
 
@@ -15,7 +15,7 @@ describe("TimingStructureParser", () => {
         { y: 30, value: 200 },
       ]
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 120 })
     assert.deepEqual(structure[1], { y: 10, bpm: 50 })
@@ -35,7 +35,7 @@ describe("TimingStructureParser", () => {
         { y: 20, value: 100 },
       ]
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 120 })
     assert.deepEqual(structure[1], { y: 10, bpm: 50 })
@@ -58,7 +58,7 @@ describe("TimingStructureParser", () => {
         { y: 30, value: 800 },
       ]
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 120 })
     assert.deepEqual(structure[1], { y: 10, bpm: 70 })
@@ -77,7 +77,7 @@ describe("TimingStructureParser", () => {
       ],
       stop_events: []
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 50 })
     assert.deepEqual(structure[1], { y: 20, bpm: 60 })
@@ -93,7 +93,7 @@ describe("TimingStructureParser", () => {
       ],
       stop_events: []
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 50 })
     assert.deepEqual(structure[1], { y: 10, bpm: 60 })
@@ -108,7 +108,7 @@ describe("TimingStructureParser", () => {
         { y: 10, value: 100 },
       ]
     }
-    const tsp = new bg.TimingStructureParser()
+    const tsp = new TimingStructureParser()
     const structure = tsp.parse(bmson)
     assert.deepEqual(structure[0], { y: 0, bpm: 120, stop: 200 })
     assert.deepEqual(structure[1], { y: 10, stop: 100 })

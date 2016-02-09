@@ -1,6 +1,18 @@
 import _ from "lodash"
 
+/**
+ * A class parses and formats <code>bpm_events</code> and <code>stop_events</code>.
+ */
 export default class TimingStructureParser {
+  /**
+   * Parse and format timing events.
+   * It will merge BPM and STOP events which is at same pulse, and sort them in ascending pulse order.
+   * It will also remove unnecessary BPM change whose value is unchanged.
+   * <code>bmson.info.init_bpm</code> will be interpreted as y=0 bpm.
+   * You can construct timing table from timing structore object by using {@link TimingTableConstructor}.
+   * @param  {Object} bmson A valid bmson that will be parsed.
+   * @return {Object}       A timing structure object.
+   */
   parse(bmson) {
     let structure = []
 
